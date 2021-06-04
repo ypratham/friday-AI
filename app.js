@@ -98,6 +98,12 @@ function ProcessCommand(UserText) {
         fridayToSpeak = "Hello, sir!";
         Speak(fridayToSpeak);
         setTimeout(startListening, 3000);
+    } 
+    else if(  UserText.includes("friday") && UserText.includes("quit")|| UserText.includes("bye") || UserText.includes("quit")|| UserText.includes("sleep")){
+        fridayToSpeak = "Ok sir";
+        Speak(fridayToSpeak);
+        fridayArea.innerHtml = fridayToSpeak;
+        programRun = false
     }
     else if(UserText.includes("friday")){
         fridayToSpeak = "Yes sir";
@@ -106,12 +112,6 @@ function ProcessCommand(UserText) {
         Speak(fridayToSpeak);
         setTimeout(startListening, 3500);
     } 
-    else if(  UserText.includes("friday") && UserText.includes("quit")|| UserText.includes("bye") || UserText.includes("quit")|| UserText.includes("sleep")){
-        fridayToSpeak = "Ok sir";
-        Speak(fridayToSpeak);
-        fridayArea.innerHtml = fridayToSpeak;
-        programRun = false
-    }
     else {
         fridayToSpeak = "Sorry, I didn't get that";
         Speak(fridayToSpeak);
