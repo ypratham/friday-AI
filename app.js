@@ -87,7 +87,7 @@ function ProcessCommand(UserText) {
         setTimeout(startListening, 3000);
     } 
     else if(UserText.includes("friday") &&  UserText.includes("mail") && UserText.includes("college")){
-        fridayToSpeak = "Opening p yadav 5000 mail";
+        fridayToSpeak = "Opening college mail";
         Speak(fridayToSpeak);
         fridayArea.innerHtml = fridayToSpeak;
         window.open("https://mail.google.com/mail/u/2/#inbox");
