@@ -10,7 +10,9 @@ body {
   align-items: center;
   justify-content: space-around;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
+  background-color: black;
+  color: aqua;
 }
 h1 {
   height: max-content;
@@ -18,11 +20,64 @@ h1 {
   font-size: 54px;
   font-family: "Josefin Sans", sans-serif;
 }
-button {
-  padding: 10px 20px;
-  border-width: 0;
-  background: transparent;
+#letsSpeak {
+  opacity: 80%;
+}
+#letsSpeak:hover {
+  opacity: 100%;
   cursor: pointer;
-  width: max-content;
-  height: max-content;
+}
+.mainBody {
+  margin-bottom: 100px;
+  width: 400px;
+  position: relative;
+}
+.date {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: -40%;
+  font-size: 28px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.dateTimeBG {
+  position: absolute;
+}
+#outerCircle {
+  animation: rotation 20s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+#innerCircle {
+  animation: rotationRev 10s infinite linear;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+@keyframes rotation {
+  from {
+    transform: rotateZ(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotationRev {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.weatherBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  position: relative;
+  left: 100%;
+  top: -150px;
 }
