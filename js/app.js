@@ -7,8 +7,8 @@ function startListening(){
     if (window.hasOwnProperty('webkitSpeechRecognition')) {
         const recog = new sr();
         recog.lang = 'en-in';
-        var activatingAudio = new Audio('activate.ogg');
-        activatingAudio.play()
+        var activatingAudio = new Audio('sounds/activate.ogg');
+        activatingAudio.play() 
         activatingAudio.playbackRate = 3;
         recog.onstart = console.log("Listening");
         recog.onresult = function (data) {
