@@ -3,7 +3,7 @@ const fridayArea = document.getElementById('friday');
 
 var programRun = true;
 
-function startListening() {
+function Listening() {
     if (window.hasOwnProperty('webkitSpeechRecognition')) {
         const recog = new sr();
         recog.lang = 'en-in';
@@ -21,15 +21,15 @@ function startListening() {
     }
 }
 
-function handleResults(data) {
+function Result(data) {
     let text = data.results[0][0].transcript;
     text = text.toLowerCase();
     console.log(text)
-    ProcessCommand(text)
+    Command(text)
 }
 
 // Hand written set of rule
-function ProcessCommand(UserText) {
+function Command(UserText) {
     setOPL();
     let fridayToSpeak = "";
 
@@ -116,7 +116,7 @@ function ProcessCommand(UserText) {
         Speak(fridayToSpeak);
 
         window.open("https://mail.google.com/mail/u/0/?tab=wm#inbox");
-        setTimeout(startListening, 3000);
+        setTimeout(Listening, 3000);
     }
 
     // open college mail
@@ -125,7 +125,7 @@ function ProcessCommand(UserText) {
         Speak(fridayToSpeak);
 
         window.open("https://mail.google.com/mail/u/2/#inbox");
-        setTimeout(startListening, 3000);
+        setTimeout(Listening, 3000);
     }
 
     // open figma file of friday 
@@ -133,14 +133,14 @@ function ProcessCommand(UserText) {
         fridayToSpeak = "Opening my figma file";
         Speak(fridayToSpeak);
         window.open("https://www.figma.com/file/T8KvvogfSiNRfaTWh6wQuM/FRIDAY?node-id=1%3A2");
-        setTimeout(startListening, 3000);
+        setTimeout(Listening, 3000);
     }
 
     // hello to friday
     else if (UserText.includes("friday") && UserText.includes("hello")) {
         fridayToSpeak = "Hello, sir!";
         Speak(fridayToSpeak);
-        setTimeout(startListening, 3000);
+        setTimeout(Listening, 3000);
     }
 
     // sleep friday
@@ -154,14 +154,14 @@ function ProcessCommand(UserText) {
     else if (UserText.includes("friday")) {
         fridayToSpeak = "Yes sir, how may I help you?";
         Speak(fridayToSpeak);
-        setTimeout(startListening, 3500);
+        setTimeout(Listening, 3500);
     }
     // else didn't get that
     else {
         fridayToSpeak = "Sorry, I didn't get that";
         Speak(fridayToSpeak);
 
-        setTimeout(startListening, 3000);
+        setTimeout(Listening, 3000);
     }
     setOPH();
 }
@@ -393,7 +393,7 @@ function onPageLoad() {
     weatherStats("Navi%20Mumbai");
     scanMe();
     wishMe();
-    startListening();
+    Listening();
 
 
 }
@@ -402,7 +402,7 @@ window.addEventListener("DOMContentLoad", onPageLoad());
 
 document.getElementById('letsSpeak').addEventListener("click", function () {
     setOPL();
-    startListening();
+    Listening();
     setOPH();
 
 });
